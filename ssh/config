@@ -1,0 +1,15 @@
+ForwardAgent yes
+ForwardX11 yes
+ForwardX11Trusted yes
+Compression yes
+#Ciphers arcfour,blowfish-dc
+
+#Combine ssh connections
+ControlMaster auto
+#ControlPath ~/.ssh/cm_socket/%r@%h:%p
+Host *.qa*.pages
+     UserKnownHostsFile /dev/null
+     StrictHostKeyChecking no
+
+Host *.prod.pages
+     User dummy

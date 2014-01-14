@@ -23,3 +23,5 @@ fresh guard.rb --file
 
 fresh rspec --file
 
+fresh ssh/config --file=~/.ssh/config
+
