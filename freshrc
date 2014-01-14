@@ -12,3 +12,6 @@ fresh ackrc --file
 
 fresh bundle/config --file=~/.bundle/config
 
+fresh fish/config.fish --file=~/.config/fish/config.fish --marker
+fresh fish/functions --file=~/.config/fish/functions/
+
