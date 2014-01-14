@@ -1,0 +1,9 @@
+fresh freshshell/fresh bin/fresh --bin
+
+fresh gitconfig --file
+
+fresh-options --bin
+  fresh bin/\*
+fresh-options
+
+
