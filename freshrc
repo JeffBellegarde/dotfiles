@@ -13,5 +13,8 @@ fresh ackrc --file
 fresh bundle/config --file=~/.bundle/config
 
 fresh fish/config.fish --file=~/.config/fish/config.fish --marker
-fresh fish/functions --file=~/.config/fish/functions/
-
+#Create functions with direct links so funcsave will still work.
+mkdir -p ~/.config/fish/functions
+for FUNCTION in ~/.dotfiles/fish/functions/*; do
+  ln -sf $FUNCTION ~/.config/fish/functions/$(basename $FUNCTION)
+done
