@@ -1,0 +1,4 @@
+#!/bin/sh
+tmux new-window -n 'psql account_system qa30' "echo 'password is postgres' && psql --port 8765 --host asdb0.qa30.pages --username postgres --password account_system "
+
+

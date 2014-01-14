@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if [ -d ~/src/$1 ]; then
+    cd ~/src/$1
+    git remote update
+    bundle install --binstubs .bin
+    tmux new-window -n $1 "bash -li -c fish"
+#    tmux new-window -n $1 "fish -l -i"
+#		tmux new-window -n $1
+    tmux set-window-option automatic-rename off
+    if [[ -f Guardfile && -f .bin/guard ]]; then
+				#tmux set-window-option remain-on-exit on
+				tmux split-window -p 20 ".bin/guard start --clear"
+				tmux select-pane -t 0
+    fi
+else
+    echo "$1 does not exist."
+    ls ~/src/
+    exit 1
+fi
+
+
+

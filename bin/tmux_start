@@ -1,0 +1,20 @@
+#!/bin/bash
+
+if [ -n "$SSH_CLIENT" ]; then
+  mkdir -p "$HOME/.screen"
+
+  source `which screen-ssh-context`
+
+  for x in ${SSHVARS} ; do
+    (eval echo $x=\$$x) | sed  's/=/="/
+s/$/"/
+s/^/export /'
+  done 1> $SCREEN_SSH_VARFILE
+fi
+
+tmux has-session -t main
+if [ $? == 0 ]; then
+    tmux attach-session -t main
+else
+    tmux new-session -s main
+fi

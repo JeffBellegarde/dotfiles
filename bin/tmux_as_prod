@@ -1,0 +1,2 @@
+#!/bin/sh
+tmux new-window -n 'psql account_system prod' "psql --port 8765 --host asdb1.prod.pages --username webconnection --password account_system "

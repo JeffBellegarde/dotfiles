@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#tmux new-session -d -s $1 
+#tmux attach -t $1
+
+tmux new-window -n jobs1.$1 "ssh jobs1.$1.pages -- TERM=screen watch -d cat /opt/wp/stack_data/records/$1.pages.releases.yml"
+tmux set-window-option automatic-rename off
+tmux split-window -v -p 66 "ssh jobs1.$1.pages -- tail -n 1000 -F /opt/wp/log/wp-release/common.log"
+tmux split-window -p 66 "ssh jobs1.$1.pages"
+tmux select-pane -t 0
+tmux split-window -h -p 66 "ssh jobs1.$1.pages -- tail -n 1000 -F /opt/wp/stack_data/records/$1.pages.activity.yml"
+tmux select-pane -t 3
+

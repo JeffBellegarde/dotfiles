@@ -1,0 +1,3 @@
+#!/bin/bash
+exec emacsclient -c --alternate-editor="" /sudo:root@localhost:$1
+

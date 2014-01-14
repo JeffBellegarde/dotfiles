@@ -1,0 +1,5 @@
+#!/bin/sh
+
+tmux new-window -n "$1" "ssh $1.pages"
+
+

@@ -1,0 +1,4 @@
+#!/bin/sh
+tmux new-window -n 'Jenkins AIT' "ssh jenkins-ait0.dev.pages"
+
+
