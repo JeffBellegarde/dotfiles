@@ -21,4 +21,5 @@ done
 
 fresh guard.rb --file
 
+fresh rspec --file
 
