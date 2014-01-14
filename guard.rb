@@ -1,0 +1,3 @@
+notification :emacs
+notification :tmux
+

@@ -18,3 +18,7 @@ mkdir -p ~/.config/fish/functions
 for FUNCTION in ~/.dotfiles/fish/functions/*; do
   ln -sf $FUNCTION ~/.config/fish/functions/$(basename $FUNCTION)
 done
+
+fresh guard.rb --file
+
+
