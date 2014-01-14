@@ -1,9 +1,14 @@
 fresh freshshell/fresh bin/fresh --bin
 
-fresh gitconfig --file
+fresh git/gitconfig.$(hostname -s) --file=~/.gitconfig --ignore-missing --marker
+fresh gitconfig --file --marker
 
 fresh-options --bin
   fresh bin/\*
 fresh-options
 
+
+fresh ackrc --file
+
+fresh bundle/config --file=~/.bundle/config
 

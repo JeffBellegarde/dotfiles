@@ -1,0 +1,14 @@
+[user]
+	name = Jeff Bellegarde
+	email = jbellegarde@whitepages.com
+[github]
+	host = github.dev.pages
+	user = jeffbellegarde
+	oauth-token = 2859323d8bd3c33d9f13254f80067f789477e817
+[github "github"]
+	host = github.dev.pages
+	user = jeffbellegarde
+	oauth-token = 2859323d8bd3c33d9f13254f80067f789477e817
+
+[ghi]
+	token = dbb6248473d68dbb8d29b233952e565af21b29bd
