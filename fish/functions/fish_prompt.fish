@@ -23,7 +23,8 @@ function fish_prompt
 
   if [ (_git_branch_name) ]
     set -l git_branch $red(_git_branch_name)
-    set git_info "$blue git:($git_branch$blue)"
+		set -l git_sha (git rev-parse --short HEAD)
+    set git_info "$blue git:($git_branch$blue:$green$git_sha$blue)"
 
     if [ (_is_git_dirty) ]
       set -l dirty "$yellow ✗"
