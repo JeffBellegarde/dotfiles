@@ -27,3 +27,5 @@ fresh ssh/config --file=~/.ssh/config
 
 fresh tmux.conf --file
 
+fresh wwwjfy/emacs-fish fish-mode.el --file=~/.emacs.d/fish-mode.el
+
