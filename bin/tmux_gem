@@ -1,16 +1,18 @@
 #!/bin/bash
-
+PATH=/usr/local/bin/:$PATH
 if [ -d ~/src/$1 ]; then
     cd ~/src/$1
-    git remote update
-    bundle install --binstubs .bin
-    tmux new-window -n $1 "bash -li -c fish"
-#    tmux new-window -n $1 "fish -l -i"
-#		tmux new-window -n $1
+    tmux new-window -c $PWD -n $1 "bash -li -c fish"
     tmux set-window-option automatic-rename off
+		if [ -f .git ]; then
+				tmux split-window -c $PWD -p 80 "git remote update"
+		fi
+    if [ -f Gemfile ]; then
+				tmux split-window -c $PWD -p 80 "bundle install --binstubs .bin"
+		fi
     if [[ -f Guardfile && -f .bin/guard ]]; then
 				#tmux set-window-option remain-on-exit on
-				tmux split-window -p 20 ".bin/guard start --clear"
+				tmux split-window -c $PWD -p 20 ".bin/guard start --clear"
 				tmux select-pane -t 0
     fi
 else
