@@ -3,3 +3,4 @@
 #set PATH (go env GOROOT)/bin $PATH
 
 
+eval (direnv hook fish)
