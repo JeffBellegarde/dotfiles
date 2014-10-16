@@ -10,6 +10,3 @@ ControlMaster auto
 Host *.qa*.pages
      UserKnownHostsFile /dev/null
      StrictHostKeyChecking no
-
-Host *.prod.pages
-     User dummy
