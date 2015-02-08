@@ -1,4 +1,4 @@
 function edit
-  eval "$EMACSCLIENT $argv"
+  eval "emacsclient $argv"
 end
 
