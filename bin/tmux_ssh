@@ -1,4 +1,5 @@
 #!/bin/sh
+PATH=/usr/local/bin/:$PATH
 
 tmux new-window -n "$1" "ssh $1.pages"
 

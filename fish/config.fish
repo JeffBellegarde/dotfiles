@@ -4,3 +4,4 @@ set PATH ~/bin $PATH
 set PATH ~/go_src/bin $PATH
 set PATH /Applications/Emacs.app/Contents/MacOS/bin/ $PATH
 
+eval (direnv hook fish)
