@@ -25,3 +25,6 @@
 [merge]
         tool = ediff
         conflictstyle = diff3
+
+[github]
+        user = JeffBellegarde
